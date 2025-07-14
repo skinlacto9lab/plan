@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포르투나컴퍼니 사업 계획서</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+        :root {
+            --primary-color: #4A69BD; /* Deep Blue */
+            --secondary-color: #1E3799; /* Darker Blue */
+            --accent-color-1: #F79F1F; /* Vivid Yellow */
+            --accent-color-2: #A3CB38; /* Lime Green */
+            --bg-color: #f4f7f6;
+            --text-color: #343a40;
+            --light-gray: #e9ecef;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 40px 50px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 40px 20px;
+            border-radius: 12px 12px 0 0;
+            margin: -40px -50px 40px -50px;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .finance-summary {
+            background-color: var(--light-gray);
+            border-left: 5px solid var(--accent-color-1);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .chart-container {
+            width: 100%;
+            max-width: 450px;
+            margin: 30px auto;
+        }
+        
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            border-left: 3px solid var(--primary-color);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 3px solid var(--primary-color);
+        }
+        .timeline-item h3 {
+            margin-top: 0;
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 1.3em;
+        }
+        .timeline-item ul {
+            padding-left: 0;
+            list-style-type: none;
+        }
+        .timeline-item li {
+            padding-left: 20px;
+            position: relative;
+        }
+        .timeline-item li::before {
+            content: '✓';
+            color: var(--accent-color-2);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* SNS Icons */
+        .sns-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            font-size: 0.9em;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>포르투나컴퍼니 사업 계획서</h1>
+        </header>
+
+        <main>
+            <section id="overview">
+                <h2><svg class="sns-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"></path></svg>제1장: 사업 개요 및 핵심 전략</h2>
+                <ul>
+                    <li><strong>최종 목표:</strong> 자체 개발 제품과 공급사 제품을 모두 취급하는 '브랜드 기반 인플루언서 공동구매 및 제품 유통 중계 전문 에이전시' 구축.</li>
+                    <li><strong>사업 모델:</strong> 3단계 진화 모델 (스킨락토 제품 판매 → 자체 브랜드 런칭 및 B2B 사업 본격화 → B2B 브랜드 인큐베이팅)</li>
+                    <li><strong>핵심 역량:</strong> AI를 활용한 1인 운영 자동화 및 대표의 제품 기획 전문성.</li>
+                </ul>
+            </section>
+            
+            <section id="action-plan">
+                <h2><svg class="sns-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"></path></svg>제2장: 상세 실행 계획 (12개월 로드맵)</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>1분기 (1~3개월): 판매 시스템 최적화 및 초기 시장 안착</h3>
+                        <ul>
+                            <li>기존 스마트스토어에 '문제 해결', 'TPO' 컨셉의 번들 제품 등록 및 판매 개시.</li>
+                            <li>AI CS 챗봇(예: 채널톡) 연동 및 고객 응대 시나리오 고도화.</li>
+                            <li>스킨락토에서 지원하는 '체험단' 프로그램을 활용하여 블로그, 인스타그램에 20~30건 이상의 후기 배포.</li>
+                            <li>저예산 네이버 키워드 광고 집행 (일 1~2만원).</li>
+                            <li>자체 브랜드 제품 1차 기획 및 시장 분석 착수.</li>
+                        </ul>
+                    </div>
+                     <div class="timeline-item">
+                        <h3>2분기 (4~6개월): SNS 채널 활성화 및 판매 채널 확장</h3>
+                        <ul>
+                            <li>유튜브, 인스타그램, 틱톡 채널에 '제품 활용팁' 중심의 콘텐츠(릴스/숏폼) 주 2-3회 발행.</li>
+                            <li>네이버 블로그에 제품 심층 리뷰 및 활용법 등 정보성 콘텐츠 발행.</li>
+                            <li>판매 채널 확장: 토스쇼핑 입점 및 판매 시작, 올웨이즈 '팀구매 핫딜' 기획 및 제안.</li>
+                            <li>자체 브랜드 제품 1차 샘플링 및 테스트 진행.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>3분기 (7~9개월): 데이터 기반 최적화 및 B2B 준비</h3>
+                        <ul>
+                             <li>광고 성과 분석 후, 고효율 키워드 중심 예산 재분배.</li>
+                             <li>AI 리뷰 분석 솔루션을 활용해 고객 피드백 취합 및 자체 브랜드 제품 개발에 반영.</li>
+                             <li>자체 브랜드 제품 생산을 위한 제조업체(MOU) 및 패키지 디자인 확정.</li>
+                             <li>B2B 서비스를 위한 포트폴리오 초안 제작 ('스킨락토 제품 판매' 성공 데이터 정리).</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>4분기 (10~12개월): 자체 브랜드 런칭 준비 및 법인 전환 검토</h3>
+                        <ul>
+                            <li>자체 브랜드 제품 초도물량 생산 계약 및 상세페이지 제작.</li>
+                            <li>B2B 서비스 제안서 및 계약서 초안 완성.</li>
+                            <li>연간 매출 및 순이익 예상치를 기반으로 개인사업자 유지 vs 법인 전환 시의 유불리(세금 등) 최종 비교 분석.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sns-strategy">
+                <h2><svg class="sns-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M10 9.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5S12.33 8 11.5 8 10 8.67 10 9.5zm-1.5 0C8.5 7.84 9.84 6.5 11.5 6.5S14.5 7.84 14.5 9.5 13.16 12.5 11.5 12.5 8.5 11.16 8.5 9.5zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12z"></path></svg>제3장: SNS 채널 운영 전략 (제품 활용팁 중심)</h2>
+                 <p><strong>목표:</strong> 제품에 대한 전문성을 바탕으로, 실용적인 활용팁을 제공하여 고객의 신뢰를 얻고 자연스러운 구매 전환을 유도합니다.</p>
+                <ul>
+                    <li><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjRkYwMDAwIj48cGF0aCBkPSJNMjEuOCAyLjQxYy0uMzMtLjM1LTEuMy0uNDItMi4wNi0uNDZDMTQuMjYgMiAxMiAyaC0uMDJDMTAuNDYgMiA0LjI2IDIgMi4yNiAyLjAxYy0uNzYuMDQtMS43My4xMS0yLjA2LjQ2LS4zMy4zNi0uMzcgMS4yNS0uMzcgMS40MlYxMi41YzAgLjE3LjA0IDEuMDYuMzcgMS40Mi4zMy4zNSAxLjMuNDIgMi4wNi40NCA1LjQ4LjA1IDcuNzEuMDUgNy43My4wNWgxLjM4cy0uNTYtMS44My0xLjEtMy40Yy0uNTktMS42OC0xLjE3LTMuMzUtMS4xNy0zLjM1cy41OS4yOSAxLjQ3LjU5YzEuNDguNTMgMy4zMyAxLjIgMy42MyAxLjM1VjcuNzVjLS4yOS0uMTUtMi4xMy0uOS0zLjU4LTEuNDctLMy4xOC0xLjI2LTQuNDItMS4zMy00LjQyLTEuMzNzLjU5LTEuNjcgMS4xNy0zLjM0YzUuMjUtMS41IDYuNjUtMS40NyA3LjIxLTEuNDcuNTggMCAxLjU2LjEgMS44OC40LjMzLjMxLjM3IDEuMi4zNyAxLjM4djYuNDljLjM1LjE3IDIuMjEuOSAzLjU4IDEuNDggMS42OS42OCAyLjE5LjgzIDIuMTkuODNWMy44M2MwLS4xNy0uMDQtMS4wNi0uMzctMS40MnoiLz48L3N2Zz4=" class="sns-icon" alt="YouTube"><strong>YouTube (`스킨케어 꿀팁 노트` 가칭):</strong> "SB-1 토너 200% 활용법" 등 깊이 있는 정보 제공.</li>
+                    <li><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNOS45MSwxNC40NEExLjg0LDEuODQsMCwxLDAsMTMuMDgsMTIsNC40LDQuNCwwLDAsMSw5LjkxLDE0LjQ0Wm0zLjgyLTYuMDZhMy40MSwzLjQxLDAsMSwwLDMuNDEsMy40MUExLjE1LDQuMTUsMCwwLDAsMTMuNzMsOC4zOFpNNy4xNCw4LjM4YTQuNDEsNC40MSwwLDAsMC0zLjI5LDEuMzUsMS44MywxLjgzLDAsMSwwLDIuNTksMi41OUExLjEzLDEuMTMsMCwwLDAsOC4zOCw5LjkxLDQuNDMsNC40MywwLDAsMCw3LjE0LDguMzhabTkuNzIsMGExLjgzLDEuODMsMCwxLDAsMi41OSwyLjU5QzE5LjQ0LDExLjUsMjAsOS41MywyMCw5LjA5LDIwLDguNjYsMTkuNDMsOC4zOCwxOS40Myw4LjM4Wm0tNC44NiwxLjI4QTEuMTMsMS4xMywwLDAsMCw4LjM4LDcuMTQsNC40Myw0LjQzLDAsMCwwLDkuNjIsOC4zOCwxLjEzLDEuMTMsMCwwLDAsMTEuNSw2LjI1YS42Ny42NywwLDAsMSwwLDEuMzMsMS44MywxLjgzLDAsMCwwLTEuMjgsMy4xNWExLjEzLDEuMTMsMCwwLDAtLjY0LDIuMDYsNC40MSw0LjQxLDAsMCwwLDEuNzUsNC4xMywxLjEzLDEuMTMsMCwwLDAsMi4wNi0uNjQsMS44NCwxLjg0LDAsMCwwLDMuMTUtMS4yOEExLjEzLDEuMTMsMCwwLDAsMTUuNzUsMTIsNC40LDQuNCwwLDAsMCwxMi4wOCw5LjY2WiIvPjwvc3ZnPg==" class="sns-icon" alt="Instagram"><strong>Instagram:</strong> 제품 제형, 사용 전후 비교 등 비주얼 중심의 릴스 제작.</li>
+                    <li><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIuNTMsNC4xN2E2LjM4LDYuMzgsMCwwLDEsMy4zMywxLjA4VjE0YTQsNCwwLDAsMS0xLjgxLDIuNDcsNi4xOCw2LjE4LDAsMCwxLTIuNS41Myw2LjM3LDYuMzcsMCwwLDEtNC4yMy0xLjc3LDYuNTIsNi41MiwwLDAsMS0xLjgxLTQuNDdWNGEzLjU4LDMuNTgsMCwwLDEsMi4xMy0zLjI5LDMsMywwLDAsMSwxLjQyLS4yMU0xNiw5LjE3YTQuNDMsNC40MywwLDAsMC0xLjU4LTMuNDcsNC4yMSw0LjIxLDAsMCwwLTUtLjE2LDQuNDksNC40OSwwLDAsMC0xLjU4LDMuNjNWMTMuOGE0LjM5LDQuMzksMCwwLDAsMS43MywzLjMsNC4yOCw0LjI4LDAsMCwwLDQuOS4wOCw0LjM4LDQuMzgsMCwwLDAsMS41My0zLjQxWiIvPjwvc3ZnPg==" class="sns-icon" alt="TikTok"><strong>TikTok:</strong> "30초 만에 끝내는 아침 붓기 제거 루틴" 등 빠르고 트렌디한 팁 공유.</li>
+                </ul>
+            </section>
+
+            <section id="long-term-plan">
+                <h2><svg class="sns-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg>제4장: 중장기 계획 및 B2B 확장 전략</h2>
+                <h3>성장 전략 (12-24개월)</h3>
+                <p>
+                    '스킨락토 제품 판매'를 통해 확보한 초기 자본과 성공적인 판매 채널 레퍼런스를 바탕으로, 직접 기획/개발한 **자체 브랜드 제품을 런칭**합니다. 이후 '스킨락토 제품'과 '자체 브랜드 제품'을 모두 성공시킨 경험을 통합하여, 다른 중소 브랜드를 위한 **'인플루언서 협업 공동구매 및 제품 유통 중계(유사 유통업)'** 전문 에이전시 사업을 본격화합니다.
+                </p>
+                <h3>최종 진화 (24개월 이후)</h3>
+                <ul>
+                    <li><strong>B2B 브랜드 인큐베이터로 확장:</strong> 제품 기획, 개발, SNS 브랜딩, 공동구매 실행까지의 모든 성공 노하우를 패키지화하여 '올인원 런칭 컨설팅' 서비스 제공.</li>
+                    <li><strong>리스크 관리:</strong> '인플루언서 협업 공동구매' 시장의 변동성에 대비하여, 장기 컨설팅 계약으로 전환을 유도하거나 자사몰 육성에 재투자하여 수익 구조를 다각화.</li>
+                </ul>
+            </section>
+
+            <section id="financials">
+                <h2><svg class="sns-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c2.07-.4 3.5-1.66 3.5-3.66 0-2.31-1.9-3.45-4.7-4.14z"></path></svg>제5장: 재무 계획 요약</h2>
+                <div class="finance-summary">
+                    <h4>수익성 및 손익분기점(BEP)</h4>
+                    <ul>
+                        <li><strong>매출 대비 변동비 비율:</strong> 약 67.5% (상품원가 40% + 플랫폼 수수료 10~15% + 마케팅비 15%)</li>
+                        <li><strong>월 고정비:</strong> 약 300만원</li>
+                        <li><strong>월 손익분기점 매출액(BEP):</strong> <strong>약 923만원</strong></li>
+                    </ul>
+                </div>
+                <div class="chart-container">
+                    <canvas id="costsChart"></canvas>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 포르투나컴퍼니. All Rights Reserved.</p>
+        </footer>
+    </div>
+<script>
+    const ctx = document.getElementById('costsChart').getContext('2d');
+    const costsChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['상품원가 (40%)', '마케팅비 (15%)', '플랫폼 수수료 (12.5%)', '매출 총이익 (32.5%)'],
+            datasets: [{
+                label: '매출 대비 비용 및 이익 구조',
+                data: [40, 15, 12.5, 32.5],
+                backgroundColor: [
+                    'rgba(74, 105, 189, 0.8)',  // COGS
+                    'rgba(247, 159, 31, 0.8)',   // Marketing
+                    'rgba(192, 57, 43, 0.8)',    // Fees
+                    'rgba(163, 203, 56, 0.8)'   // Gross Profit
+                ],
+                borderColor: [
+                    'rgba(74, 105, 189, 1)',
+                    'rgba(247, 159, 31, 1)',
+                    'rgba(192, 57, 43, 1)',
+                    'rgba(163, 203, 56, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: '매출 100% 기준 비용 및 이익 구조',
+                    font: {
+                        size: 16,
+                        family: "'Noto Sans KR', sans-serif"
+                    },
+                    padding: {
+                        top: 10,
+                        bottom: 20
+                    }
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
